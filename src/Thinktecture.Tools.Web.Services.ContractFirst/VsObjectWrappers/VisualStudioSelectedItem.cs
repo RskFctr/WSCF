@@ -4,9 +4,9 @@ using System.Text;
 using EnvDTE;
 using System.IO;
 
-namespace Thinktecture.Tools.Web.Services.ContractFirst
+namespace Thinktecture.Tools.Web.Services.ContractFirst.VsObjectWrappers
 {
-    public class VisualStudioSelectedItem
+    internal class VisualStudioSelectedItem
     {
         #region Private Members
 

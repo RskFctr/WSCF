@@ -2,12 +2,12 @@ using EnvDTE;
 
 using System.Linq;
 
-namespace Thinktecture.Tools.Web.Services.ContractFirst
+namespace Thinktecture.Tools.Web.Services.ContractFirst.VsObjectWrappers
 {
 	/// <summary>
 	/// Writes message to a 'WSCF.blue' pane in the Output window.
 	/// </summary>
-	public class OutputWindowWriter
+	internal class OutputWindowWriter
 	{
 		private readonly OutputWindowPane outputWindowPane;
 

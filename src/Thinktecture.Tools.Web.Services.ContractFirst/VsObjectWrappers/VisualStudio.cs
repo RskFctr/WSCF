@@ -6,9 +6,9 @@ using EnvDTE;
 using System.Diagnostics;
 using EnvDTE80;
 
-namespace Thinktecture.Tools.Web.Services.ContractFirst
+namespace Thinktecture.Tools.Web.Services.ContractFirst.VsObjectWrappers
 {
-    public class VisualStudio
+    internal class VisualStudio
     {
         #region Private Fields
 

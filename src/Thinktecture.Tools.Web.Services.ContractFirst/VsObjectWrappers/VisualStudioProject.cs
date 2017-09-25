@@ -8,13 +8,16 @@ using VSLangProj80;
 using System.Diagnostics;
 using System.IO;
 
-namespace Thinktecture.Tools.Web.Services.ContractFirst
+namespace Thinktecture.Tools.Web.Services.ContractFirst.VsObjectWrappers
 {
-    public class VisualStudioProject
+    internal class VisualStudioProject
     {
         #region Private Fields
 
         private readonly Project project;
+
+        private const string prjKindVBProject = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}";
+        private const string prjKindCSharpProject = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}";
 
         #endregion
 
@@ -152,11 +155,21 @@ namespace Thinktecture.Tools.Web.Services.ContractFirst
 
 		private CodeLanguage GetProjectLanguage()
         {
+            //public abstract class PrjKind
+            //{
+            //    [MarshalAs(UnmanagedType.LPStr)]
+            //    public const string prjKindVBProject = "{F184B08F-C81C-45F6-A57F-5ABD9991F28F}";
+            //    [MarshalAs(UnmanagedType.LPStr)]
+            //    public const string prjKindCSharpProject = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}";
+            //    [MarshalAs(UnmanagedType.LPStr)]
+            //    public const string prjKindVSAProject = "{13B7A3EE-4614-11D3-9BC7-00C04F79DE25}";
+            //}
+
 			switch (project.Kind)
 			{
-				case VSLangProj.PrjKind.prjKindVBProject:
+				case prjKindVBProject:
 					return CodeLanguage.VisualBasic;
-				case VSLangProj.PrjKind.prjKindCSharpProject:
+				case prjKindCSharpProject:
 					return CodeLanguage.CSharp;
 				default:
 					return CodeLanguage.CSharp;
